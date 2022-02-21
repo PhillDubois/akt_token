@@ -1,0 +1,93 @@
+include: package:flutter_lints/flutter.yaml
+analyzer:
+  plugins:
+    - dart_code_metrics
+  errors:
+    # # treat missing required parameters as a warning (not a hint)
+    # missing_required_param: warning
+    # treat missing returns as a warning (not a hint)
+    missing_return: warning
+    invalid_annotation_target: ignore
+  exclude:
+    - "bin/cache/**"
+    # the following two are relative to the stocks example and the flutter package respectively
+    # see https://github.com/dart-lang/sdk/issues/28463
+    - "lib/i18n/messages_*.dart"
+    - "lib/src/http/**"
+    - "**/*.freezed.dart"
+    - "**/*.g.dart"
+    - "**/*_translations.dart"
+
+linter:
+  rules:
+    avoid_print: true
+    prefer_is_empty: true
+    prefer_is_not_operator: true
+    sized_box_for_whitespace: true
+    annotate_overrides: true
+    prefer_const_constructors_in_immutables: true
+    sort_unnamed_constructors_first: false
+    sort_child_properties_last: false
+    prefer_final_locals: false
+    argument_type_not_assignable: false
+    overridden_fields: false
+    directives_ordering: false
+    prefer_if_elements_to_conditional_expressions: false
+    use_key_in_widget_constructors: false
+    # prefer_relative_imports: true
+
+    # ------ Disable individual rules ----- #
+    #                 ---                   #
+    # Turn off what you don't like.         #
+    # ------------------------------------- #
+
+    # Use parameter order as in json response
+    always_put_required_named_parameters_first: false
+    sort_pub_dependencies: false
+
+    # Util classes are awesome!
+    avoid_classes_with_only_static_members: false
+
+    # ------ Enable individual rules ------ #
+    #                 ---                   #
+    # These rules here are good but too     #
+    # opinionated to enable them by default #
+    # ------------------------------------- #
+
+    # Make constructors the first thing in every class
+    sort_constructors_first: true
+
+    # The new tabs vs. spaces. Choose wisely
+    prefer_single_quotes: false
+    prefer_double_quotes: false
+
+    # Good packages document everything
+    public_member_api_docs: false
+
+    # Blindly follow the Flutter code style, which prefers types everywhere
+    always_specify_types: false
+
+    # Back to the 80s
+    lines_longer_than_80_chars: false
+
+dart_code_metrics:
+  anti-patterns:
+    - long-method
+    # - long-parameter-list
+  metrics:
+    cyclomatic-complexity: 20
+    maximum-nesting-level: 5
+    # number-of-parameters: 4
+    source-lines-of-code: 50
+  metrics-exclude:
+    - test/**
+  rules:
+    - avoid-unused-parameters
+    - double-literal-format
+    - no-object-declaration
+    - no-boolean-literal-compare
+    - no-empty-block
+    - prefer-trailing-comma
+    - no-equal-then-else
+    - prefer-single-widget-per-file:
+        ignore-private-widgets: true

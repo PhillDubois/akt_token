@@ -1,0 +1,25 @@
+{
+  "appTitle": "AKT Token",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "investmentsTitle": "Investments",
+  "@investmentsTitle": {
+    "description": "Investments page"
+  },
+  "investmentsDescription": "Purchase our exclusive token with {percentage}% bonus & get your lifetime Elite membership now",
+  "@investmentsDescription": {
+    "placeholders": {
+      "percentage": {
+        "type": "double",
+        "format": "currency"
+      }
+    }
+  },
+  "investmentErrorUnexpected": "Une erreur est survenue.",
+  "investmentErrorNetwork": "Une erreur est survenue. Connexion internet instable.",
+  "learnMore": "Learn more",
+  "cryptos": "Cryptos",
+  "tokens": "Tokens",
+  "retry": "Réessayer"
+}
